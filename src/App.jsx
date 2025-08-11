@@ -1,7 +1,12 @@
 // src/App.jsx
 
-const App = () => {
-  return <h1>Hello world!</h1>;
+const App = () =>
+{
+  return (
+    <>
+      
+    </>
+  )
 };
 
 export default App;
