@@ -11,11 +11,7 @@ function MailboxList({ mailboxes })
                 {
                     mailboxes.map((box) => 
                     {
-                        return (
-                            <>
-                                <Link to={`/mailboxes/${box._id}`}>Mailbox { box._id } </Link>
-                            </>
-                        )
+                        return <li key={box._id}><Link to={`/mailboxes/${box._id}`}>Mailbox { box._id } </Link></li>
                     })
                 }
             </ul>
