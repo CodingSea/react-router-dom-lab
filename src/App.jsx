@@ -12,6 +12,8 @@ const App = () =>
 
   function addBox(selectedSize, owner)
   {
+    event.preventDefault();
+
     const newMailbox = 
     {
       _id: mailboxes.length + 1,

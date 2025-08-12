@@ -16,9 +16,9 @@ function MailboxForm({ addBox })
 
             <label htmlFor="boxSize">Select a Box Size:</label>
             <select name="boxSize" onChange={handleChange}>
-                <option>Small</option>
-                <option>Medium</option>
-                <option>Large</option>
+                <option value="Small" selected>Small</option>
+                <option value="Medium">Medium</option>
+                <option value="Large">Large</option>
             </select>
 
             <button type="submit">Submit</button>
