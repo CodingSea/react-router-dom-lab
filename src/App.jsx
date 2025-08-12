@@ -9,6 +9,7 @@ import { useState } from "react";
 const App = () =>
 {
   const [mailboxes, setMailboxes] = useState([{ _id: 1, boxSize: 'Small', boxOwner: 'Alex' }, { _id: 2, boxSize: 'Large', boxOwner: 'Ahmed' }]);
+  const [mailbox, setMailboxe] = useState({});
 
   function addBox()
   {
@@ -24,7 +25,7 @@ const App = () =>
           <Route path="/" element={<Home />}>Home</Route>
           <Route path="/mailboxes" element={<MailboxList mailboxes={mailboxes} />}>Mailboxes</Route>
           <Route path="/new-mailbox" element={<MailboxForm mailboxes={mailboxes} addBox={addBox} />}>New Mailbox</Route>
-          <Route path="/mailboxes/:id" element={<MailboxDetails />} />
+          <Route path="/mailboxes/:id" element={<MailboxDetails mailboxes={mailboxes} />} />
         </Routes>
       </>
     </Router>

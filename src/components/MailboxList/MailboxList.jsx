@@ -13,7 +13,7 @@ function MailboxList({ mailboxes })
                     {
                         return (
                             <>
-                                <Link to={`/mailboxes/${box._id}`}>{ box.boxOwner }</Link>
+                                <Link to={`/mailboxes/${box._id}`}>Mailbox { box._id } </Link>
                             </>
                         )
                     })
