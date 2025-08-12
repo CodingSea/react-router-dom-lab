@@ -9,11 +9,18 @@ import { useState } from "react";
 const App = () =>
 {
   const [mailboxes, setMailboxes] = useState([{ _id: 1, boxSize: 'Small', boxOwner: 'Alex' }, { _id: 2, boxSize: 'Large', boxOwner: 'Ahmed' }]);
-  const [mailbox, setMailboxe] = useState({});
 
-  function addBox()
+  function addBox(selectedSize, owner)
   {
-    
+    const newMailbox = 
+    {
+      _id: mailboxes.length + 1,
+      boxSize: selectedSize,
+      boxOwner: owner
+    }
+
+    const copyMailboxes = [...mailboxes, newMailbox];
+    setMailboxes(copyMailboxes);
   }
 
   return (
@@ -25,7 +32,7 @@ const App = () =>
           <Route path="/" element={<Home />}>Home</Route>
           <Route path="/mailboxes" element={<MailboxList mailboxes={mailboxes} />}>Mailboxes</Route>
           <Route path="/new-mailbox" element={<MailboxForm mailboxes={mailboxes} addBox={addBox} />}>New Mailbox</Route>
-          <Route path="/mailboxes/:id" element={<MailboxDetails mailboxes={mailboxes} />} />
+          <Route path="/mailboxes/:mailboxId" element={<MailboxDetails mailboxes={mailboxes} />} />
         </Routes>
       </>
     </Router>
